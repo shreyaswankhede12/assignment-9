@@ -1,0 +1,81 @@
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 9\\Probability and Random Variables} 
+\author{Shreyas Wankhede}
+\date{\today}
+\institute{IIT Hyderabad}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Question}
+\begin{frame}{Question}
+\begin{block}{Question 7.10}
+We denote by $X_m$ a random variable equal to the number of tosses of a coin until heads shows for the mth time. Show that if\\\vspace{3mm}
+ $ P\{h\} = p$ , then $E\{x_m\} = \dfrac{m}{p}. $
+
+\end{block}
+
+
+\end{frame}
+
+
+% Blocks frame
+\section{Solution}
+\begin{frame}{Solution}
+As we know,
+    \begin{block}{}
+        $1+x+x^2+x^3+....x^n+....=\dfrac{1}{1-x}$
+    \end{block}
+    Differentiating, we obtain,
+    \begin{block}{}
+        $1+2x+3x^2+4x^3+....nx^{n-1}+...=\sum_{k=1}^{\infty}kx^{k-1}=\dfrac{1}{(1-x)^2}$
+    \end{block}
+    
+\end{frame} 
+
+
+\begin{frame}{solution}
+The Random variable $x_1$ equals the number of tosses until heads show for the first time. Hence $x_1$ takes the values $1, 2, 3, ....$\\with $P(x_1=k)=pq^{k-1}$, Hence,
+\begin{block}{from above equation,}
+ E$(x_1)=\sum_{k=1}^{\infty}kP(x_1=k)=\sum_{k=1}^{\infty}kpq^{n-1} =\dfrac{p}{(1-q)^2}=\dfrac{1}{p}$
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+Starting the count after the first head shows,we conclude that the random variable $x_2-x_1$ has the same statistics as the random variable $x_1$.Hence,
+\begin{block}{we can write}
+E$(x_2-x_1)=E(x_1)$\\\vspace{3mm}
+E$(x_2)=2E(x_1)=\dfrac{2}{p}$
+\end{block}
+ Reasoning similarly, we can conclude that,
+ \begin{block}{from all above results}
+ E$(x_n-x_{n-1})=E(x_1)$. Hence (induction)\\\vspace{3mm}
+ E$(x_n)=E(x_{n-1})+E(x_1)=\dfrac{n-1}{p}+\dfrac{1}{p}=\dfrac{n}{p}$
+ \end{block}
+\end{frame}
+
+\end{document}
